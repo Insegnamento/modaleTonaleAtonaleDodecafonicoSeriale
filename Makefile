@@ -4,6 +4,7 @@ pan:
 	pandoc docs/slides.md \
 	    --pdf-engine=xelatex \
         --template=styles/template.latex \
+		--metadata-file=styles/config.yml \
         -t beamer \
  		-o presentazione.pdf 
 	pandoc docs/discorso/discorsi_slides.md -o discorsi_slides.pdf

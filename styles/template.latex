@@ -138,27 +138,14 @@ $endif$
 % -----------------------------------------------------------------------------
 \usepackage{iftex}
 \ifPDFTeX
-  % Se usi pdfLaTeX
-  \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
+  \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp}
 \else
-  % Se usi XeLaTeX o LuaLaTeX
-  \usepackage{unicode-math}
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-  
-  % Imposta DejaVu Sans come font principale
-  \setmainfont{DejaVu Sans}
-  \setsansfont{DejaVu Sans}
-  \setmonofont{DejaVu Sans Mono}
+  \usepackage{fontspec}
+  \defaultfontfeatures{Scale=MatchLowercase,Ligatures=TeX}
 \fi
 
-% Font di default (Latin Modern) - solo se non specificato
-$if(fontfamily)$
-$else$
-\usepackage{lmodern}
-$endif$
 
 % -----------------------------------------------------------------------------
 % 7. TEMA BEAMER
